@@ -1,0 +1,46 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do sim/do.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:53:43 on Feb 15,2025
+# vlog -reportprogress 300 ./src/gowin_multalu/gowin_multalu_comb.v ./src/top.sv 
+# -- Compiling module Gowin_MULTALU
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 16:53:43 on Feb 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:53:43 on Feb 15,2025
+# vlog -reportprogress 300 ./sim/top_tb.sv 
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 16:53:43 on Feb 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt work.top_tb -L ./gw1n_lib 
+# Start time: 16:53:43 on Feb 15,2025
+# Loading sv_std.std
+# Loading work.top_tb
+# Loading ./gw1n_lib.GSR
+# Loading work.top
+# Loading work.Gowin_MULTALU
+# Loading ./gw1n_lib.MULTALU18X18
+# ** Warning: (vsim-3839) ./src/top.sv(26): Variable '/top_tb/dut/y', driven via a port connection, is multiply driven. See ./src/top.sv(31).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/dut File: ./src/top.sv
+add wave -position insertpoint  \
+sim:/top_tb/dut/clk \
+sim:/top_tb/dut/rst \
+sim:/top_tb/dut/r \
+sim:/top_tb/dut/dout \
+sim:/top_tb/dut/r_pipe \
+sim:/top_tb/dut/coef \
+sim:/top_tb/dut/y
+run -all
+# ** Note: $stop    : ./sim/top_tb.sv(28)
+#    Time: 280 ns  Iteration: 0  Instance: /top_tb
+# Break in Module top_tb at ./sim/top_tb.sv line 28
+# End time: 16:57:38 on Feb 15,2025, Elapsed time: 0:03:55
+# Errors: 0, Warnings: 1

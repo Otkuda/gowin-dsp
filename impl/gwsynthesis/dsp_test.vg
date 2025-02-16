@@ -1,0 +1,40 @@
+//
+//Written by GowinSynthesis
+//Tool Version "V1.9.10.03 Education (64-bit)"
+//Sat Feb 15 14:31:08 2025
+
+//Source file index table:
+//file0 "\C:/Users/Otkuda/Documents/Polytech/dsp_gowin/dsp_test/src/top.sv"
+`pragma protect begin_protected
+`pragma protect version="2.3"
+`pragma protect author="default"
+`pragma protect author_info="default"
+`pragma protect encrypt_agent="GOWIN"
+`pragma protect encrypt_agent_info="GOWIN Encrypt Version 2.3"
+
+`pragma protect encoding=(enctype="base64", line_length=76, bytes=256)
+`pragma protect key_keyowner="GOWIN",key_keyname="GWK2023-09",key_method="rsa"
+`pragma protect key_block
+jk+edsEu8HjEJ4vYRzGJ7S3L1bKyN1EY0ncdzIdnaVAfW7kkGq5tJSqpOYGI1mwyRCbY7OGww7e9
+aORhrhuF7Asy8IKPWPu82SQf0jfNVkOaIX44I3MfY1KejI/ZyEsA7p14zxRiNmPikRjJ/J0rkinn
+lr2wtF3IxcC8AOZ1GahLJ8igCPJoDe8wLz9sQTKaD4ACrk5zGJ5cBF7mIn4lFjI2w2eESNM6y3V+
+abGlm8npTPJdX8tupJqzDzMmfcBbBV+B7JAwkmYrWe7sCxcQoS20AOpUO5WbBlceL2XCRVp5NL6X
+MKBwkTVVNf9qbyy8aMmOtjD1Cf3gYqavM2KNHQ==
+
+`pragma protect encoding=(enctype="base64", line_length=76, bytes=576)
+`pragma protect data_keyowner="default-ip-vendor"
+`pragma protect data_keyname="default-ip-key"
+`pragma protect data_method="aes128-cfb"
+`pragma protect data_block
+r2qH90DGh/pt2L5OzPX9C73Mj/ZUr/0sHHV9OxgVasBT7YFVhpb97qFuvm9r4xurOVdiXKigM19K
+TrMPtE6z7/MtoRfKqd4gnYAttNrfRNe/JfIXco9SRunCCN+6+rlzn6IQNJDdk7h9WDZ4Ox1rkdZk
+M2Fybmf8g4mjf1/bMcdbC1Fpcz6C7+LDuHnOa9KPnM5ccadV9mbI4Bzn3IxbIoyiKwwYHzR/gfkQ
+t9BtxmDNmH6aAg+1PArtC7VA3Bvzd+jqMQrjZNsaL8/NrGUo4rGGifpmmIjpGJ8wfBj2lKk1hwSe
+uzKG8LsSwWngQYepXqqtiEr7392KHrVtOB28TU8G3v/pI0R0ZZiaVBC260RnRc9s+zlu4BDe9CmE
+iOHvYCKbSILeLTnu+IKCTeu4g7ixcKjfzQyqAvxaU95bcokn6E6LA3NP6hF+VLQJsT0G4nUOuBQ4
+CD89omJYjLy6fPi2kNFqwS3IaRbLUuHWTVHypvBXXX3+UjSw+cBxS/9soqVEDMdBJup3GfCSuhwF
+v2enxVVl6JWelmXoLvWeuQbuvDD6TEntdaHbLkPh/PQuHSJI7iLJs0gQsPnzff43bfuBia7sxwVX
+CCJVmsHRfjgOZ5mwaVw3z48UgTrar7p+qq8Rr8Dd3yi7zuIGMTbFxnEk68lYozNt0O3kJhkAM9Zc
++W952hwdYyM14FeBHPnaa+SNyXPU3+5aflFIoNI13oUqMk0Cq1DC4/7KwTA7c66ofAIiYMLI19fN
+AubgG0eg
+`pragma protect end_protected

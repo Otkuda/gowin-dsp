@@ -1,0 +1,24 @@
+-series GW1N
+-device GW1N-9
+-device_version C
+-package LQFP144
+-part_number GW1N-LV9LQ144C6/I5
+
+
+-mod_name Gowin_MULTALU
+-file_name gowin_multalu
+-path C:/Users/Otkuda/Documents/Polytech/dsp_gowin/dsp_test/src/gowin_multalu/
+-type MULTALU
+-file_type vlg
+-multalu_mode 0
+-width_a 18
+-width_b 18
+-width_c 54
+-data_type_a signed
+-data_type_b signed
+-reset_mode sync
+-ina_reg bypass
+-inb_reg bypass
+-inc_reg bypass
+-pipe_reg bypass
+-out_reg registered
