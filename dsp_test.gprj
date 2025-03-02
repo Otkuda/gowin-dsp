@@ -5,8 +5,9 @@
     <Version>5</Version>
     <Device name="GW1N-9C" pn="GW1N-LV9LQ144C6/I5">gw1n9c-017</Device>
     <FileList>
-        <File path="src/gowin_multalu/gowin_multalu.v" type="file.verilog" enable="1"/>
+        <File path="src/dff.v" type="file.verilog" enable="1"/>
+        <File path="src/filter_step_block.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_multalu/gowin_multalu_comb.v" type="file.verilog" enable="1"/>
-        <File path="src/top.sv" type="file.verilog" enable="1"/>
+        <File path="src/top.v" type="file.verilog" enable="1"/>
     </FileList>
 </Project>

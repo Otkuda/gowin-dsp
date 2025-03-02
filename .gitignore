@@ -1,0 +1,7 @@
+*.wlf
+*.opt
+*.ini
+*.user
+
+impl/*
+!impl/pnr/*.fs
