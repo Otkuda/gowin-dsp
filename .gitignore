@@ -2,6 +2,13 @@
 *.opt
 *.ini
 *.user
+*.qdb
+*.qpg
+
+__pycache__
+.pytest_cache
+sim_build
+work
 
 impl/*
 !impl/pnr/*.fs

@@ -7,74 +7,108 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Otkuda/Documents/Polytech/dsp_gowin/dsp_test
-vGowin_MULTALU
-Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1739627623
+dC:/Users/Otkuda/Documents/Polytech/dsp_gowin/dsp_test
+vdff
+Z0 !s110 1741193129
 !i10b 1
-!s100 _d]8ci0JB?_z7;<0:g6fO3
-IL6oZ@Z6ebOTWJj5=DjoEJ1
-Z3 VDg1SIo80bB@j0V0VzS_@n1
-!s105 gowin_multalu_comb_v_unit
-S1
+!s100 co>GXJXj9J5eg1X;18;cA2
+Il?hdaT268kBA0R3jcVdAS2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/Otkuda/Documents/Polytech/dsp_gowin/gowin-dsp
+w1741023988
+8./src/dff.v
+F./src/dff.v
+L0 4
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1741193129.000000
+Z5 !s107 ./src/filter_step_block.v|./src/dff.v|./src/top.v|./src/gowin_multalu/gowin_multalu_comb.v|
+Z6 !s90 -reportprogress|300|./src/gowin_multalu/gowin_multalu_comb.v|./src/top.v|./src/dff.v|./src/filter_step_block.v|
+!i113 1
+Z7 tCvgOpt 0
+vfilter_block_step
 R0
-w1739623044
+!i10b 1
+!s100 DUO9^[9j2;7;=@H`<ZB^41
+IjjAOIHcWdV?16_>OlOdTz1
+R1
+R2
+w1741024844
+8./src/filter_step_block.v
+F./src/filter_step_block.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vGowin_MULTALU
+R0
+!i10b 1
+!s100 Lf4JKY@=bOBOA4GEPjLnU0
+IkfWXARL<S=5ES]5eYedbM3
+R1
+R2
+w1740906832
 8./src/gowin_multalu/gowin_multalu_comb.v
 F./src/gowin_multalu/gowin_multalu_comb.v
 L0 10
-Z4 OV;L;10.5b;63
-r1
-!s85 0
-31
-Z5 !s108 1739627623.000000
-Z6 !s107 ./src/top.sv|./src/gowin_multalu/gowin_multalu_comb.v|
-Z7 !s90 -##implicit##push_minusfile_path##|C:/Users/Otkuda/Documents/Polytech/dsp_gowin/dsp_test/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|./src/gowin_multalu/gowin_multalu_comb.v|./src/top.sv|
-!i113 1
-Z8 tSvlog 1 CvgOpt 0
-n@gowin_@m@u@l@t@a@l@u
-vtop
-R1
-R2
-!i10b 1
-!s100 5Q;Ve;P6GgU8<j`kLN=f70
-IZ]_:nN3oGhF6ka6Sg7RPM1
 R3
-!s105 top_sv_unit
-S1
-R0
-w1739627608
-8./src/top.sv
-F./src/top.sv
-L0 2
-R4
 r1
 !s85 0
 31
+R4
 R5
 R6
-R7
 !i113 1
-R8
-vtop_tb
+R7
+n@gowin_@m@u@l@t@a@l@u
+vtop
+R0
+!i10b 1
+!s100 zk?@gKkfF=f5z[Y[6HHj72
+I[oHVK:Ce@mo6abNbLe1<?3
 R1
 R2
-!i10b 1
-!s100 z3nXEGjS^gFLk>BTo_GW10
-IRgJIbAQkPRCJ6Izzc:eIN2
+w1741192661
+8./src/top.v
+F./src/top.v
+L0 4
 R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vtop_tb
+DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+R0
+!i10b 1
+!s100 Nb762lhLTR[?2jICh`4Wd1
+IU19UTn4_bJRHY1]K8Mc[g1
+R1
 !s105 top_tb_sv_unit
 S1
-R0
-w1739626782
+R2
+w1741193111
 8./sim/top_tb.sv
 F./sim/top_tb.sv
 L0 2
-R4
+R3
 r1
 !s85 0
 31
-R5
+R4
 !s107 ./sim/top_tb.sv|
-!s90 -##implicit##push_minusfile_path##|C:/Users/Otkuda/Documents/Polytech/dsp_gowin/dsp_test/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|./sim/top_tb.sv|
+!s90 -reportprogress|300|./sim/top_tb.sv|
 !i113 1
-R8
+R7

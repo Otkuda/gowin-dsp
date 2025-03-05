@@ -1,22 +1,31 @@
 `timescale 1ns/1ps
+`default_nettype none
 
 module top #(
-    parameter order = 1
+    parameter order = 5
 ) (
     input wire clk,
     input wire rst,
     input wire ena,
 
     input wire signed [17:0] x_in,
-    output reg signed [53:0] dout
+    output wire signed [53:0] dout
 );
 
 wire signed [17:0] b [order+1:0];
 wire signed [17:0] x_reg;
 
+wire signed [53:0] dout_wire;
 
-assign b[0] = 18'd123;
-assign b[1] = 18'd123;
+
+// first 6 real values of ifft of inverse step function
+// resulting in sinc(x) = sin(x)/x
+assign b[0] = 18'd200;
+assign b[1] = 18'd152;
+assign b[2] = 18'd48;
+assign b[3] = -18'd30;
+assign b[4] = -18'd37;
+assign b[5] = 18'd0;
 
 
 dff #(.WIDTH(18)) sync_reg_inst (
@@ -72,11 +81,13 @@ generate
                 .x_in   (x_wire[order*18-1:(order-1)*18]),
                 .x_out  (),
                 .y_in   (y_wire[order*54-1:(order-1)*54]),
-                .y_out  (dout),
+                .y_out  (dout_wire),
                 .b_in   (b[i])
             );
         end
     end
 endgenerate
+
+assign dout = dout_wire;
 
 endmodule
