@@ -8,15 +8,25 @@ module top #(
     input wire rst,
     input wire ena,
 
-    input wire signed [17:0] x_in,
+    input wire write,
+    
+    input  wire        [6:0]  adr_in,
+    input  wire signed [17:0] x_in,
     output wire signed [53:0] dout
 );
 
 wire signed [17:0] b [order+1:0];
-wire signed [17:0] x_reg;
+wire signed [17:0] x_reg, x_out;
 
 wire signed [53:0] dout_wire;
 
+wire [6:0] x_ptr_int;
+
+localparam IDLE = 0;
+localparam WRITE = 1;
+localparam READ = 2;
+
+reg [1:0] state = IDLE;
 
 // first 6 real values of ifft of inverse step function
 // resulting in sinc(x) = sin(x)/x
@@ -27,12 +37,53 @@ assign b[3] = -18'd30;
 assign b[4] = -18'd37;
 assign b[5] = 18'd0;
 
+reg [6:0] x_ptr, last_adr;
+
+assign x_ptr_int = (write) ?  x_in : x_ptr;
+
+Gowin_SP mem_x(
+    .dout(x_out),    //output [17:0] dout
+    .clk(clk),      //input clk
+    .oce(),         //input oce (output data clock enable)
+    .ce(ena),       //input ce (clk_enable)
+    .reset(rst),  //input reset
+    .wre(write),      //input wre (write enable)
+    .ad(x_ptr_int),    //input [6:0] ad (address)
+    .din(x_in)      //input [17:0] din (data in)
+);
+
+always @(posedge clk) begin
+    case (state)
+        IDLE: begin
+            if (rst) begin
+                x_ptr <= 0;
+                last_adr <= 0;
+            end else begin
+                if (write)
+                    state <= WRITE;
+            end
+        end
+        WRITE: begin
+            if (~write)
+                state <= READ;
+            else begin
+                last_adr <= adr_in;
+            end
+        end
+        READ: begin
+            if (x_ptr <= last_adr) begin
+                x_ptr <= x_ptr + 1;
+            end else
+                state = IDLE;
+        end
+    endcase    
+end
 
 dff #(.WIDTH(18)) sync_reg_inst (
     .clk    (clk),
     .rst    (rst),
     .c_ena  (ena),
-    .d      (x_in),
+    .d      (x_out),
     .q      (x_reg)
 );
 

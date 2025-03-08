@@ -8,6 +8,7 @@
         <File path="src/dff.v" type="file.verilog" enable="1"/>
         <File path="src/filter_step_block.v" type="file.verilog" enable="1"/>
         <File path="src/gowin_multalu/gowin_multalu_comb.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_sp/gowin_sp.v" type="file.verilog" enable="1"/>
         <File path="src/top.v" type="file.verilog" enable="1"/>
     </FileList>
 </Project>
