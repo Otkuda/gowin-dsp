@@ -1,5 +1,4 @@
 `timescale 1ns/1ps
-`default_nettype none
 
 module top #(
     parameter order = 5
@@ -10,7 +9,7 @@ module top #(
 
     input wire write,
     
-    input  wire        [6:0]  adr_in,
+    input  wire        [7:0]  adr_in,
     input  wire signed [17:0] x_in,
     output wire signed [53:0] dout
 );
@@ -19,8 +18,6 @@ wire signed [17:0] b [order+1:0];
 wire signed [17:0] x_reg, x_out;
 
 wire signed [53:0] dout_wire;
-
-wire [6:0] x_ptr_int;
 
 localparam IDLE = 0;
 localparam WRITE = 1;
@@ -37,20 +34,26 @@ assign b[3] = -18'd30;
 assign b[4] = -18'd37;
 assign b[5] = 18'd0;
 
-reg [6:0] x_ptr, last_adr;
+reg [7:0] x_ptr, last_adr;
 
-assign x_ptr_int = (write) ?  x_in : x_ptr;
+wire read_ena;
+assign read_ena = state == READ;
 
-Gowin_SP mem_x(
-    .dout(x_out),    //output [17:0] dout
-    .clk(clk),      //input clk
-    .oce(),         //input oce (output data clock enable)
-    .ce(ena),       //input ce (clk_enable)
-    .reset(rst),  //input reset
-    .wre(write),      //input wre (write enable)
-    .ad(x_ptr_int),    //input [6:0] ad (address)
-    .din(x_in)      //input [17:0] din (data in)
+Gowin_SDPB mem_x_sdpb(
+    .dout(x_out), //output [17:0] dout
+    .clka(clk), //input clka
+    .cea(write), //input cea
+    .reseta(rst), //input reseta
+    .clkb(clk), //input clkb
+    .ceb(read_ena), //input ceb
+    .resetb(rst), //input resetb
+    .oce(0), //input oce
+    .ada(adr_in), //input [7:0] ada
+    .din(x_in), //input [17:0] din
+    .adb(x_ptr) //input [7:0] adb
 );
+
+
 
 always @(posedge clk) begin
     case (state)
@@ -59,8 +62,11 @@ always @(posedge clk) begin
                 x_ptr <= 0;
                 last_adr <= 0;
             end else begin
-                if (write)
+                if (write) begin
                     state <= WRITE;
+                    x_ptr <= 0;
+                    last_adr <= 0;
+                end
             end
         end
         WRITE: begin

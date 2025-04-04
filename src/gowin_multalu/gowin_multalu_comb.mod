@@ -7,7 +7,7 @@
 
 -mod_name Gowin_MULTALU
 -file_name gowin_multalu_comb
--path C:/Users/Otkuda/Documents/Polytech/dsp_gowin/dsp_test/src/gowin_multalu/
+-path C:/Users/Otkuda/Documents/Polytech/dsp_gowin/gowin-dsp/src/gowin_multalu/
 -type MULTALU
 -file_type vlg
 -multalu_mode 0

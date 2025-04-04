@@ -1,5 +1,4 @@
 `timescale 1ns/1ps
-`default_nettype none
 
 module filter_block_step #(
     parameter WIDTH_X = 32,

@@ -8,7 +8,7 @@ GSR GSR(.GSRI(1'b1));
 logic clk, rst, ena;
 
 logic write;
-logic [6:0] adr_in;
+logic [7:0] adr_in;
 
 logic [17:0] x_in;
 logic [53:0] dout;
@@ -50,7 +50,11 @@ initial begin
 
     ena = 1;
     #(CLK_PER);
-    write_x(64);
+    write = 1;
+    x_in = 1000;
+    #(CLK_PER);
+    write = 0;
+    x_in = 0;
     #500;
     $stop;
 end
