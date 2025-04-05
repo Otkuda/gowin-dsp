@@ -7,71 +7,108 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Otkuda/Documents/Polytech/dsp_gowin/dsp_test/sim
+Z0 dC:/Users/Otkuda/Documents/Polytech/dsp_gowin/gowin-dsp/sim
+vdff
+Z1 !s110 1743860851
+!i10b 1
+!s100 4H:QLXo;87YPk[I:fKT>U2
+I<b68N7K0@^^4ZR>iiA[jk2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1742393609
+8../src/dff.v
+F../src/dff.v
+L0 3
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1743860851.000000
+Z5 !s107 ../src/filter_step_block.v|../src/dff.v|../src/top.v|../src/gowin_multalu/gowin_multalu_comb.v|
+Z6 !s90 -reportprogress|300|../src/gowin_multalu/gowin_multalu_comb.v|../src/top.v|../src/dff.v|../src/filter_step_block.v|
+!i113 1
+Z7 tCvgOpt 0
+vfilter_block_step
+R1
+!i10b 1
+!s100 XZF8jN;0zi:]z93^Gk?jY0
+Ic;f@McOcJXm;RamCHoXfT3
+R2
+R0
+w1742393604
+8../src/filter_step_block.v
+F../src/filter_step_block.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
 vGowin_MULTALU
-!s110 1739625717
+R1
 !i10b 1
 !s100 Lf4JKY@=bOBOA4GEPjLnU0
 Ie:nm2R^N_GFITfZDXhX?`2
-Z1 VDg1SIo80bB@j0V0VzS_@n1
+R2
 R0
-w1739623044
+w1742920860
 8../src/gowin_multalu/gowin_multalu_comb.v
 F../src/gowin_multalu/gowin_multalu_comb.v
 L0 10
-Z2 OV;L;10.5b;63
-r1
-!s85 0
-31
-!s108 1739625717.000000
-!s107 ../src/top.sv|../src/gowin_multalu/gowin_multalu_comb.v|
-Z3 !s90 -reportprogress|300|../src/gowin_multalu/gowin_multalu_comb.v|../src/top.sv|
-!i113 1
-Z4 tCvgOpt 0
-n@gowin_@m@u@l@t@a@l@u
-vtop
-Z5 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z6 !s110 1739624540
-!i10b 1
-!s100 m0Tz3KY6>enmPF?zcJ<NH3
-IBFYF2gTcS5DoePW?ZB[C@0
-R1
-!s105 top_sv_unit
-S1
-R0
-w1739623534
-8../src/top.sv
-F../src/top.sv
-L0 2
-R2
-r1
-!s85 0
-31
-Z7 !s108 1739624540.000000
-!s107 ../src/top.sv|../src/gowin_multalu/gowin_multalu_comb.v|
 R3
-!i113 1
+r1
+!s85 0
+31
 R4
-vtop_tb
 R5
 R6
-!i10b 1
-!s100 ;?]AQLH2XL77o5Iz_`1?O1
-Ij3NAlIn<cA3:IU^oYALmM3
+!i113 1
+R7
+n@gowin_@m@u@l@t@a@l@u
+vtop
 R1
+!i10b 1
+!s100 2:?Li=K`4ciG^g3;YD;1^1
+IaJZnVAaTB7zBBJZbX@L;N0
+R2
+R0
+w1743860486
+8../src/top.v
+F../src/top.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vtop_tb
+DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+!s110 1743860852
+!i10b 1
+!s100 ]Be>1JA^QD_NT9Pl:C[UH3
+I:F5H@EZ328T8?E`nd;7SI1
+R2
 !s105 top_tb_sv_unit
 S1
 R0
-w1739624537
-8./top_tb.sv
-F./top_tb.sv
+w1743860555
+8./fir_filter_tb/top_tb.sv
+F./fir_filter_tb/top_tb.sv
 L0 2
-R2
+R3
 r1
 !s85 0
 31
-R7
-!s107 ./top_tb.sv|
-!s90 -reportprogress|300|./top_tb.sv|
+!s108 1743860852.000000
+!s107 ./fir_filter_tb/top_tb.sv|
+!s90 -reportprogress|300|./fir_filter_tb/top_tb.sv|
 !i113 1
-R4
+R7

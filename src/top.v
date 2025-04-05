@@ -7,15 +7,12 @@ module top #(
     input wire rst,
     input wire ena,
 
-    input wire write,
-    
-    input  wire        [7:0]  adr_in,
     input  wire signed [17:0] x_in,
     output wire signed [53:0] dout
 );
 
 wire signed [17:0] b [order+1:0];
-wire signed [17:0] x_reg, x_out;
+wire signed [17:0] x_out;
 
 wire signed [53:0] dout_wire;
 
@@ -34,63 +31,13 @@ assign b[3] = -18'd30;
 assign b[4] = -18'd37;
 assign b[5] = 18'd0;
 
-reg [7:0] x_ptr, last_adr;
-
-wire read_ena;
-assign read_ena = state == READ;
-
-Gowin_SDPB mem_x_sdpb(
-    .dout(x_out), //output [17:0] dout
-    .clka(clk), //input clka
-    .cea(write), //input cea
-    .reseta(rst), //input reseta
-    .clkb(clk), //input clkb
-    .ceb(read_ena), //input ceb
-    .resetb(rst), //input resetb
-    .oce(0), //input oce
-    .ada(adr_in), //input [7:0] ada
-    .din(x_in), //input [17:0] din
-    .adb(x_ptr) //input [7:0] adb
-);
-
-
-
-always @(posedge clk) begin
-    case (state)
-        IDLE: begin
-            if (rst) begin
-                x_ptr <= 0;
-                last_adr <= 0;
-            end else begin
-                if (write) begin
-                    state <= WRITE;
-                    x_ptr <= 0;
-                    last_adr <= 0;
-                end
-            end
-        end
-        WRITE: begin
-            if (~write)
-                state <= READ;
-            else begin
-                last_adr <= adr_in;
-            end
-        end
-        READ: begin
-            if (x_ptr <= last_adr) begin
-                x_ptr <= x_ptr + 1;
-            end else
-                state = IDLE;
-        end
-    endcase    
-end
 
 dff #(.WIDTH(18)) sync_reg_inst (
     .clk    (clk),
     .rst    (rst),
     .c_ena  (ena),
-    .d      (x_out),
-    .q      (x_reg)
+    .d      (x_in),
+    .q      (x_out)
 );
 
 wire signed [(order*18)-1:0] x_wire;
@@ -107,7 +54,7 @@ generate
                 .clk    (clk),
                 .rst    (rst),
                 .ena    (ena),
-                .x_in   (x_reg),
+                .x_in   (x_out),
                 .x_out  (x_wire[17:0]),
                 .y_in   (54'd0),
                 .y_out  (y_wire[53:0]),
